@@ -59,7 +59,7 @@ generate_time_series <- function(steps,
     }
     # queue length after current time step
     queue_length[i] <- previous + arrival - departure
-    # if control == TRUE:
+    # if control:
     # truncate every 10 steps to 2 elements in queue
     if (control &
         i %% 10 == 0 & queue_length[i] > limit) {
