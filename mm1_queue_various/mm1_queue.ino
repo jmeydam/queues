@@ -108,7 +108,6 @@ char input_string[3] = "ab";
  * Parameters:
  *   fifo:    array of strings (char pointers)
  *   size:    size of array
- *   p_head:  pointer to index head
  *   p_tail:  pointer to index tail
  *   arrival: string (char pointer) to be enqueued
  *
