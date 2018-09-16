@@ -11,7 +11,7 @@
 #   as closed-form expressions can be obtained for many metrics of interest
 #   in this model."
 #
-# Approach (following Bertsekas and Tsitsiklis, 2008):
+# Approach, following Bertsekas and Tsitsiklis (2008):
 #
 # - Arrivals: Use a Bernoulli process as a discrete approximation of the
 #   Poisson process.

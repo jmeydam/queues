@@ -224,7 +224,7 @@ void loop() {
 		if (rand() % 100 < 30) {
 			departure = dequeue(fifo, array_size, p_head, p_tail);
 		}
-		// Control: truncate every 10 steps to 2 elements in  queue
+		// Control: truncate every 10 steps to 2 elements in queue
 		///*
 		if (iterations % 10 == 0) {
 			check_and_truncate(fifo, array_size, p_head, 2);
