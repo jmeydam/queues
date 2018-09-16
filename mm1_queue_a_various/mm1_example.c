@@ -16,12 +16,12 @@
  *
  * - Arrivals: Use a Bernoulli process as a discrete approximation of the
  *   Poisson process.
- * - Interprete a Bernoulli process as a sequence of independent Bernoulli
+ * - Interpret a Bernoulli process as a sequence of independent Bernoulli
  *   random variables with probability prob_1 of success at any given trial,
  *   a trial being, e.g., the flip of an unfair coin.
  * - Service times: Use a geometric distribution as a discrete approximation
  *   of the exponential distribution.
- * - Interprete a geometric random variable in terms of repeated independent
+ * - Interpret a geometric random variable in terms of repeated independent
  *   trials with probability prob_2 of success (again, a trial being, e.g., 
  *   the flip of an unfair coin) until the first success.
  * - Discrete time: Loop with one iteration being one time step.
@@ -45,7 +45,7 @@
 #include <stdlib.h>
 
 /*
- * Function enqeue
+ * Function enqueue
  *
  * Parameters:
  *   fifo:    array of strings (char pointers)
@@ -70,7 +70,7 @@ int enqueue(char *fifo[], int size, int *p_head, int *p_tail, char *arrival) {
 }
 
 /*
- * Function deqeue
+ * Function dequeue
  *
  * Parameters:
  *   fifo:    array of strings (char pointers)
@@ -164,7 +164,7 @@ int main() {
     switch(EXAMPLE) {
     /* 
      * Example 1
-     * Enqueuing one element in each iteration
+     * Enqueueing one element in each iteration
      */
     case 1:
         while ((status == 0) && (iterations < 100)) {
@@ -178,8 +178,8 @@ int main() {
         break;        
     /* 
      * Example 2
-     * Enqueuing one element in each iteration
-     * Dequeuing one element in every second iteration
+     * Enqueueing one element in each iteration
+     * Dequeueing one element in every second iteration
      */
     case 2:
         while ((status == 0) && (iterations < 100)) {
@@ -197,8 +197,8 @@ int main() {
         break;        
     /* 
      * Example 3
-     * Enqueuing with probability 0.5
-     * Dequeuing with probability 0.5
+     * Enqueueing with probability 0.5
+     * Dequeueing with probability 0.5
      * Without control
      */
     case 3:
@@ -219,8 +219,8 @@ int main() {
         break;        
     /* 
      * Example 4
-     * Enqueuing with probability 0.2
-     * Dequeuing with probability 0.4
+     * Enqueueing with probability 0.2
+     * Dequeueing with probability 0.4
      * Without control
      */
     case 4:
@@ -241,8 +241,8 @@ int main() {
         break;        
     /* 
      * Example 5
-     * Enqueuing with probability 0.4
-     * Dequeuing with probability 0.2
+     * Enqueueing with probability 0.4
+     * Dequeueing with probability 0.2
      * Without control
      */
     case 5:
@@ -263,8 +263,8 @@ int main() {
         break;        
     /* 
      * Example 6
-     * Enqueuing with probability 0.49
-     * Dequeuing with probability 0.52
+     * Enqueueing with probability 0.49
+     * Dequeueing with probability 0.52
      * Without control
      */
     case 6:
@@ -285,8 +285,8 @@ int main() {
         break;        
     /* 
      * Example 7
-     * Enqueuing with probability 0.4
-     * Dequeuing with probability 0.2
+     * Enqueueing with probability 0.4
+     * Dequeueing with probability 0.2
      * With control
      */
     case 7:
@@ -311,8 +311,8 @@ int main() {
         break;        
     /* 
      * Example 8
-     * Enqueuing with probability 0.49
-     * Dequeuing with probability 0.52
+     * Enqueueing with probability 0.49
+     * Dequeueing with probability 0.52
      * With control
      */
     case 8:
@@ -337,8 +337,8 @@ int main() {
         break;        
     /* 
      * Example 9
-     * Enqueuing with probability 0.25
-     * Dequeuing with probability 0.30
+     * Enqueueing with probability 0.25
+     * Dequeueing with probability 0.30
      * Without control
      */
     case 9:
@@ -363,8 +363,8 @@ int main() {
         break;        
     /* 
      * Example 10
-     * Enqueuing with probability 0.25
-     * Dequeuing with probability 0.30
+     * Enqueueing with probability 0.25
+     * Dequeueing with probability 0.30
      * With control
      */
     case 10:

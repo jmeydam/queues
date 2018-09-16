@@ -5,10 +5,10 @@
  * - Queue has a head and a tail
  * - Enqueueing: inserting a new element at the tail of the queue
  * - Dequeueing: removing the element at the head of the queue
- * - Queue implemented with an array of size n (here: initilalized with NULLs)
+ * - Queue implemented with an array of size n (here: initialized with NULLs)
  * - Queued elements placed in a sequence of consecutive array slots
- * - Enqueing adds an element at the next slot to the right
- * - Dequeing removes the leftmost element (here: set to NULL, return value)
+ * - Enqueueing adds an element at the next slot to the right
+ * - Dequeueing removes the leftmost element (here: set to NULL, return value)
  * - Sequence of consecutive array slots "wraps around": slot 0 treated
  *   as the element following the last slot of the array
  * - For simplicity, this description mostly refers to the simple case 
