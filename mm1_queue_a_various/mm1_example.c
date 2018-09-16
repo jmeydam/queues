@@ -159,7 +159,7 @@ int main() {
     char *departure;
 
     // Choose example (see below)
-    int EXAMPLE = 8;
+    int EXAMPLE = 10;
     
     switch(EXAMPLE) {
     /* 
@@ -323,6 +323,58 @@ int main() {
                 status = enqueue(fifo, array_size, p_head, p_tail, "ab");
             }
             if (rand() % 100 < 52) {
+                departure = dequeue(fifo, array_size, p_head, p_tail);
+            }
+            // truncate every 10 steps to 2 elements in  queue
+            if (iterations % 10 == 0) {
+                check_and_truncate(fifo, array_size, p_head, 2);
+            }
+            show_queue(fifo, array_size);
+        }
+        if (status == 1) {
+            puts("OVERFLOW!"); 
+        }
+        break;        
+    /* 
+     * Example 9
+     * Enqueuing with probability 0.25
+     * Dequeuing with probability 0.30
+     * Without control
+     */
+    case 9:
+        srand(1234);
+        while ((status == 0) && (iterations < 10000)) {
+            iterations++;
+            if (rand() % 100 < 25) {
+                status = enqueue(fifo, array_size, p_head, p_tail, "ab");
+            }
+            if (rand() % 100 < 30) {
+                departure = dequeue(fifo, array_size, p_head, p_tail);
+            }
+            // truncate every 10 steps to 2 elements in  queue
+            // if (iterations % 10 == 0) {
+            //     check_and_truncate(fifo, array_size, p_head, 2);
+            // }
+            show_queue(fifo, array_size);
+        }
+        if (status == 1) {
+            puts("OVERFLOW!"); 
+        }
+        break;        
+    /* 
+     * Example 10
+     * Enqueuing with probability 0.25
+     * Dequeuing with probability 0.30
+     * With control
+     */
+    case 10:
+        srand(1234);
+        while ((status == 0) && (iterations < 10000)) {
+            iterations++;
+            if (rand() % 100 < 25) {
+                status = enqueue(fifo, array_size, p_head, p_tail, "ab");
+            }
+            if (rand() % 100 < 30) {
                 departure = dequeue(fifo, array_size, p_head, p_tail);
             }
             // truncate every 10 steps to 2 elements in  queue
