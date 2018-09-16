@@ -71,8 +71,8 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
-#include "Arduino.h"
-#include "LedControl.h"
+#include <Arduino.h>
+#include <LedControl.h>
 
 /*
  * pin 12: DataIn
@@ -99,6 +99,7 @@ int iterations = 0;
 int queue_length = 0;
 int status = 0;
 char *departure;
+char input_string[3] = "ab";
 
 /*
  * Function enqueue
@@ -217,7 +218,7 @@ void loop() {
 		iterations++;
 		// Enqueueing with probability 0.25, 0.30, 0.35
 		if (rand() % 100 < 35) {
-			status = enqueue(fifo, array_size, p_tail, "ab");
+			status = enqueue(fifo, array_size, p_tail, input_string);
 		}
 		// Dequeueing with probability 0.30
 		if (rand() % 100 < 30) {
