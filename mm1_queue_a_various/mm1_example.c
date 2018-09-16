@@ -299,8 +299,8 @@ int main() {
             if (rand() % 100 < 20) {
                 departure = dequeue(fifo, array_size, p_head, p_tail);
             }
-	    // truncate every 10 steps to 2 elements in  queue
-	    if (iterations % 10 == 0) {
+            // truncate every 10 steps to 2 elements in  queue
+            if (iterations % 10 == 0) {
                 check_and_truncate(fifo, array_size, p_head, 2);
             }
             show_queue(fifo, array_size);
@@ -325,8 +325,8 @@ int main() {
             if (rand() % 100 < 52) {
                 departure = dequeue(fifo, array_size, p_head, p_tail);
             }
-	    // truncate every 10 steps to 2 elements in  queue
-	    if (iterations % 10 == 0) {
+            // truncate every 10 steps to 2 elements in  queue
+            if (iterations % 10 == 0) {
                 check_and_truncate(fifo, array_size, p_head, 2);
             }
             show_queue(fifo, array_size);
