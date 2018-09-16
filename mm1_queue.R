@@ -15,12 +15,12 @@
 #
 # - Arrivals: Use a Bernoulli process as a discrete approximation of the
 #   Poisson process.
-# - Interprete a Bernoulli process as a sequence of independent Bernoulli
+# - Interpret a Bernoulli process as a sequence of independent Bernoulli
 #   random variables with probability p_1 of success at any given trial,
 #   a trial being, e.g., the flip of an unfair coin.
 # - Service times: Use a geometric distribution as a discrete approximation
 #   of the exponential distribution.
-# - Interprete a geometric random variable in terms of repeated independent
+# - Interpret a geometric random variable in terms of repeated independent
 #   trials with probability p_2 of success (again, a trial being, e.g., the
 #   flip of an unfair coin) until the first success.
 # - Discrete time: Loop with one iteration being one time step.
