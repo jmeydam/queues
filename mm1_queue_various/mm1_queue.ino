@@ -1,5 +1,6 @@
 /*
- * Simulation of M/M/1 queue with and without control of queue length
+ * Simulation of M/M/1 queue with and without control of queue length.
+ * The queue is visualized using a LED dot matrix (www.elegoo.com).
  *
  *   https://en.wikipedia.org/wiki/M/M/1_queue
  *
@@ -12,7 +13,7 @@
  *   as closed-form expressions can be obtained for many metrics of interest
  *   in this model."
  *
- * Approach (following Bertsekas and Tsitsiklis, 2008):
+ * Approach, following Bertsekas and Tsitsiklis (2008):
  *
  * - Arrivals: Use a Bernoulli process as a discrete approximation of the
  *   Poisson process.
@@ -67,9 +68,6 @@
  *
  * In this example, the array size is 64, and the elements in the queue
  * are strings of size 2 (3 including \0).
- *
- * Display: LED dot matrix, using hardware and libraries from www.elegoo.com
- *
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -86,13 +84,13 @@ LedControl lc = LedControl(12, 10, 11, 1);
 
 int array_size = 64;
 char *fifo[] = { NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
-				NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
-				NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
-				NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
-				NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
-				NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
-				NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
-				NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL };
+NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
+NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
+NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
+NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
+NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
+NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
+NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL };
 int head = 0;
 int tail = 0;
 int *p_head = &head;
