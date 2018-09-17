@@ -46,7 +46,7 @@ zero arrivals per time step, either one or zero departures per time step).
 * Simple control mechanism: truncate every 10 steps to limit = x elements 
 in queue.
 
-Implementation queue data structure (only in C programs) using an 
+The queue data structure (only in C programs) is implemented using an 
 array, following Cormen, Leiserson, Rivest and Stein (2009), p. 234:
  
 * Queue has a head and a tail.
