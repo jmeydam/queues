@@ -7,7 +7,7 @@
  * pin 12: DataIn
  * pin 11: LOAD(CS)
  * pin 10: CLK
- * One MAX72XX, 8x8 LEDs
+ * One MAX7219, 8x8 LEDs
  */
 LedControl lc = LedControl(12, 10, 11, 1);
 
