@@ -1,38 +1,3 @@
-/*
- * Implementation of a FIFO queue using an array, 
- * following Cormen, Leiserson, Rivest and Stein (2009), p. 234
- *
- * - Queue has a head and a tail
- * - Enqueueing: inserting a new element at the tail of the queue
- * - Dequeueing: removing the element at the head of the queue
- * - Queue implemented with an array of size n (here: initialized with NULLs)
- * - Queued elements placed in a sequence of consecutive array slots
- * - Enqueueing adds an element at the next slot to the right
- * - Dequeueing removes the leftmost element (here: set to NULL, return value)
- * - Sequence of consecutive array slots "wraps around": slot 0 treated
- *   as the element following the last slot of the array
- * - For simplicity, this description mostly refers to the simple case 
- *   without wrapping around - the queue consists of a sequence of 
- *   consecutive array slots somewhere in the middle of the array (head 
- *   leftmost element, tail empty slot to the right of the rightmost element)
- * - Overflow: tail reaches head, all array slots occupied
- *   - To be avoided by sizing array appropriately
- *   - In case of overflow program should be terminated
- * - Here: returning NULL and no change of queue state in case of empty
- *   queue, thus avoiding underflow
- * - Variable head used for index of element that will be dequeued next
- * - Implementation of special cases:
- *   - Initial state: queue empty, head points to slot 0
- *   - The last remaining element has been removed: head points to 
- *     slot of element removed last
- * - Variable tail used for index of empty slot to the right of the element 
- *   that was enqueued last 
- * - Implementation of special cases:
- *   - Initial state: queue empty, tail points to slot 0
- *
- * In this example, the array size is 3, and the elements in the queue
- * are strings of size 2 (3 including \0). 
- */
 #include <stdio.h>
 
 /*
@@ -41,8 +6,8 @@
  * Parameters:
  *   fifo:    array of strings (char pointers)
  *   size:    size of array
- *   p_head:  pointer to index head
- *   p_tail:  pointer to index tail
+ *   p_head:  pointer to index of head
+ *   p_tail:  pointer to index of tail
  *   arrival: string (char pointer) to be enqueued
  *
  * Return value:
@@ -72,8 +37,8 @@ int enqueue(char *fifo[], int size, int *p_head, int *p_tail, char *arrival) {
  * Parameters:
  *   fifo:    array of strings (char pointers)
  *   size:    size of array
- *   p_head:  pointer to index head
- *   p_tail:  pointer to index tail
+ *   p_head:  pointer to index of head
+ *   p_tail:  pointer to index of tail
  *
  * Return value:
  *   dequeued string (char pointer) 

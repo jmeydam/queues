@@ -1,37 +1,3 @@
-# Simulation of M/M/1 queue with and without control of queue length
-#
-#   https://en.wikipedia.org/wiki/M/M/1_queue
-#
-#   "In queueing theory, a discipline within the mathematical theory of
-#   probability, an M/M/1 queue represents the queue length in a system
-#   having a single server, where arrivals are determined by a Poisson
-#   process and job service times have an exponential distribution.
-#   The model name is written in Kendall's notation. The model is the
-#   most elementary of queueing models and an attractive object of study
-#   as closed-form expressions can be obtained for many metrics of interest
-#   in this model."
-#
-# Approach, following Bertsekas and Tsitsiklis (2008):
-#
-# - Arrivals: Use a Bernoulli process as a discrete approximation of the
-#   Poisson process.
-# - Interpret a Bernoulli process as a sequence of independent Bernoulli
-#   random variables with probability p_1 of success at any given trial,
-#   a trial being, e.g., the flip of an unfair coin.
-# - Service times: Use a geometric distribution as a discrete approximation
-#   of the exponential distribution.
-# - Interpret a geometric random variable in terms of repeated independent
-#   trials with probability p_2 of success (again, a trial being, e.g., the
-#   flip of an unfair coin) until the first success.
-# - Discrete time: Loop with one iteration being one time step.
-# - In each iteration, use random number generator to generate arrivals
-#   with probabilty p_1 and departures with probability p_2. (Either one or
-#   zero arrivals per time step, either one or zero departures per time step).
-# - Keep track of queue length.
-# - Departures are only possible when queue length > 0 (after arrivals).
-# - Simple control mechanism: truncate every 10 steps to limit = x elements
-#   in queue.
-
 rm(list = ls())
 
 generate_time_series <- function(steps,

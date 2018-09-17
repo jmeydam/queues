@@ -1,46 +1,3 @@
-/*
- * Simulation of M/M/1 queue with and without control of queue length
- *
- *   https://en.wikipedia.org/wiki/M/M/1_queue
- *
- *   "In queueing theory, a discipline within the mathematical theory of
- *   probability, an M/M/1 queue represents the queue length in a system
- *   having a single server, where arrivals are determined by a Poisson
- *   process and job service times have an exponential distribution.
- *   The model name is written in Kendall's notation. The model is the
- *   most elementary of queueing models and an attractive object of study
- *   as closed-form expressions can be obtained for many metrics of interest
- *   in this model."
- *
- * Approach (following Bertsekas and Tsitsiklis, 2008):
- *
- * - Arrivals: Use a Bernoulli process as a discrete approximation of the
- *   Poisson process.
- * - Interpret a Bernoulli process as a sequence of independent Bernoulli
- *   random variables with probability prob_1 of success at any given trial,
- *   a trial being, e.g., the flip of an unfair coin.
- * - Service times: Use a geometric distribution as a discrete approximation
- *   of the exponential distribution.
- * - Interpret a geometric random variable in terms of repeated independent
- *   trials with probability prob_2 of success (again, a trial being, e.g., 
- *   the flip of an unfair coin) until the first success.
- * - Discrete time: Loop with one iteration being one time step.
- * - In each iteration, use random number generator to generate arrivals
- *   with probabilty prob_1 and departures with probability prob_2. 
- *   (Either one or zero arrivals per time step, either one or zero 
- *   departures per time step).
- * - Keep track of queue length.
- * - Departures are only possible when queue length > 0 (after arrivals).
- * - Simple control mechanism: truncate every 10 steps to limit = x elements
- *   in queue.
- * 
- * Implementation of FIFO queue using array, following Cormen, Leiserson, 
- * Rivest and Stein (2009), p. 234
- * (Description and example: see fifo_example.c)
- *
- * In this example, the array size is 20, and the elements in the queue
- * are strings of size 2 (3 including \0). 
- */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -50,8 +7,8 @@
  * Parameters:
  *   fifo:    array of strings (char pointers)
  *   size:    size of array
- *   p_head:  pointer to index head
- *   p_tail:  pointer to index tail
+ *   p_head:  pointer to index of head
+ *   p_tail:  pointer to index of tail
  *   arrival: string (char pointer) to be enqueued
  *
  * Return value:
@@ -75,8 +32,8 @@ int enqueue(char *fifo[], int size, int *p_head, int *p_tail, char *arrival) {
  * Parameters:
  *   fifo:    array of strings (char pointers)
  *   size:    size of array
- *   p_head:  pointer to index head
- *   p_tail:  pointer to index tail
+ *   p_head:  pointer to index of head
+ *   p_tail:  pointer to index of tail
  *
  * Return value:
  *   dequeued string (char pointer) 
@@ -99,7 +56,7 @@ char* dequeue(char *fifo[], int size, int *p_head, int *p_tail) {
  * Parameters:
  *   fifo:    array of strings (char pointers)
  *   size:    size of array
- *   p_head:  pointer to index head
+ *   p_head:  pointer to index of head
  *   limit:   if queue length exceeds this limit, truncate to this limit
  */
 void check_and_truncate(char *fifo[], int size, int *p_head, int limit) {
