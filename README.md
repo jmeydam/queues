@@ -4,8 +4,8 @@ Simulation of M/M/1 queue with and without control of queue length.
 
 *mm1_queue.R* focuses on generating data for further analysis.
 
-*various/mm1_queue.ino* is the "Arduino edition". The behavior of the 
-queue is visualized using a LED dot matrix.
+*various/mm1_queue.ino* is the "Arduino edition". The queue is visualized 
+using a LED dot matrix.
 
 *various/fifo_example.c* is a stand-alone program testing the data structure.
 
@@ -35,8 +35,8 @@ a trial being, e.g., the flip of an unfair coin.
 * Service times: Use a geometric distribution as a discrete approximation 
 of the exponential distribution.
 * Interpret a geometric random variable in terms of repeated independent 
-trials with probability p_2 of success (again, a trial being, e.g., the 
-flip of an unfair coin) until the first success.
+trials with probability p_2 of success until the first success (again, a 
+trial being, e.g., the flip of an unfair coin) .
 * Discrete time: Loop with one iteration being one time step.
 * In each iteration, use random number generator to generate arrivals with 
 probability p_1 and departures with probability p_2. (Either one or 
@@ -58,10 +58,10 @@ array, following Cormen, Leiserson, Rivest and Stein (2009), p. 234:
 * Dequeueing removes the leftmost element (here: set to NULL, return value).
 * Sequence of consecutive array slots "wraps around": slot 0 treated as 
 the element following the last slot of the array.
-* For simplicity, this description mostly refers to the simple case without 
-wrapping around - the queue consists of a sequence of consecutive array 
+* For simplicity, this description mostly refers to the case without 
+wrapping around - the queue then consists of a sequence of consecutive array 
 slots somewhere in the middle of the array (head leftmost element, tail 
-empty slot to the right of the rightmost element)
+empty slot to the right of the rightmost element).
 * Overflow: tail reaches head, all array slots occupied. (To be avoided by 
 sizing array appropriately. In case of overflow program should be 
 terminated.)
