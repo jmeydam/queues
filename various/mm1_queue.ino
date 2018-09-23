@@ -4,9 +4,9 @@
 #include <LedControl.h>
 
 /*
- * pin 12: DataIn
- * pin 11: LOAD(CS)
- * pin 10: CLK
+ * Pin 12: DataIn
+ * Pin 11: LOAD(CS)
+ * Pin 10: CLK
  * One MAX7219, 8x8 LEDs
  */
 LedControl lc = LedControl(12, 10, 11, 1);
