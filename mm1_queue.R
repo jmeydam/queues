@@ -97,7 +97,7 @@ run_example <- function(control, limit = Inf) {
 }
 
 run_example(control = FALSE)
-run_example(control = TRUE, limit = 3)
+run_example(control = TRUE, limit = 2)
 
 
 # 2) distribution of various statistics without and with control ------------
@@ -155,4 +155,4 @@ run_stats <- function(control, limit = Inf) {
 }
 
 run_stats(control = FALSE)
-run_stats(control = TRUE, limit = 3)
+run_stats(control = TRUE, limit = 2)
