@@ -4,13 +4,19 @@ Simulation of M/M/1 queue with and without control of queue length.
 
 *mm1_queue.R* focuses on generating data for further analysis.
 
-*various/mm1_queue.ino* is the "Arduino edition". The queue is visualized 
-using a LED dot matrix.
-
 *various/fifo_example.c* is a stand-alone program testing the data structure.
 
 *various/mm1_example.c* is a stand-alone program testing the behaviour of 
 the queue.
+
+*various/mm1_queue.ino* is an Arduino implementation with heavy use of 
+pointers. The queue is visualized using a LED dot matrix.
+
+*various/lora_03.ino* is another Arduino implementation, using the queue as 
+part of a data transmission project. In this version global variables are
+referenced directly to avoid the need for returning pointers to dynamically 
+allocated memory.
+
 
 [Wikipedia:](https://en.wikipedia.org/wiki/M/M/1_queue)
 
