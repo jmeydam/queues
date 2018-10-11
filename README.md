@@ -82,5 +82,5 @@ Special cases:
 that was enqueued last. Special cases:
   * Initial state: queue empty, tail points to slot 0.
 
-In the Arduino version, the array size is 64, and the elements in the queue are 
-strings of size 2 (3 bytes including \0).
+In the first Arduino version, the array size is 64, and the elements in the 
+queue are strings of size 2 (3 bytes including \0).
